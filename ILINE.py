@@ -400,7 +400,6 @@ if connect_db == True:
             f"COPY state_company(full_name, position, date_employment, salary, parent_id) "
             f"FROM '{path_csv}' DELIMITER ',' CSV HEADER; "
             f"SELECT * FROM state_company " )
-            print(path_csv)
             try:
                 cur.execute(sql)
                 sql_rows = cur.fetchall()
@@ -422,6 +421,6 @@ if connect_db == True:
                 except:
                     print("ОШИБКА!!! ВОЗМОЖНО ВВЕДЕНЫ НЕДОПУСТИМЫЕ СИМВОЛЫ")
 
-        cur.close()
-        conn.close()
-        sys.exit()
+    cur.close()
+    conn.close()
+    sys.exit()
